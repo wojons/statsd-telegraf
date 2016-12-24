@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='statsd-tags',
-    version='3.2.1',
+    version='3.2.1-1',
     description='A simple statsd client with DogTag-compatible tag support.',
     long_description=open('README.rst').read(),
     author='Todd James',
