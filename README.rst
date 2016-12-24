@@ -7,22 +7,6 @@ for the statsd daemon. More specifically, this is a fork of jsocol's
 pystatsd client, with the addition of support for DogTag-compatible
 tags.
 
-.. image:: https://pypip.in/v/statsd-tags/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/statsd-tags/
-   :alt: Latest release
-
-.. image:: https://pypip.in/py_versions/statsd-tags/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/statsd-tags/
-   :alt: Supported Python versions
-
-.. image:: https://pypip.in/wheel/statsd-tags/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/statsd-tags/
-   :alt: Wheel Status
-
-.. image:: https://pypip.in/d/statsd-tags/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/statsd-tags/
-   :alt: Downloads
-
 :Code:          https://github.com/toddjames/statsd-tags
 :License:       MIT; see LICENSE file
 :Issues:        https://github.com/toddjames/statsd-tags/issues
@@ -44,6 +28,13 @@ You can also add a prefix to all your stats:
     >>> import statsd
     >>> c = statsd.StatsClient('localhost', 8125, prefix='foo')
     >>> c.incr('bar')  # Will be 'foo.bar' in statsd/graphite.
+
+DogTag-compatible tags are supported, as well:
+
+.. code-block:: python
+    >>> import statsd
+    >>> c = statsd.StatsClient('localhost', 8125)
+    >>> c.gauge('baz', 42, tags=['production', 'fqdn': 'example.org'])
 
 
 Installing
