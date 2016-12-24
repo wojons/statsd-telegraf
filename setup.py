@@ -4,13 +4,13 @@ from setuptools import find_packages, setup
 
 
 setup(
-    name='statsd',
+    name='statsd-tags',
     version='3.2.1',
-    description='A simple statsd client.',
+    description='A simple statsd client with DogTag-compatible tag support.',
     long_description=open('README.rst').read(),
-    author='James Socol',
-    author_email='james@mozilla.com',
-    url='https://github.com/jsocol/pystatsd',
+    author='Todd James',
+    author_email='todd@toddjames.io',
+    url='https://github.com/toddjames/statsd-tags',
     license='MIT',
     packages=find_packages(),
     include_package_data=True,

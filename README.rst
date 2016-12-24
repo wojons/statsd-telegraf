@@ -1,34 +1,32 @@
-======================
-A Python statsd client
-======================
+=========================================================
+A Python statsd client with DogTag-compatible tag support
+=========================================================
 
 statsd_ is a friendly front-end to Graphite_. This is a Python client
-for the statsd daemon.
+for the statsd daemon. More specifically, this is a fork of jsocol's
+pystatsd client, with the addition of support for DogTag-compatible
+tags.
 
-.. image:: https://travis-ci.org/jsocol/pystatsd.png?branch=master
-   :target: https://travis-ci.org/jsocol/pystatsd
-   :alt: Travis-CI build status
-
-.. image:: https://pypip.in/v/statsd/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/statsd/
+.. image:: https://pypip.in/v/statsd-tags/badge.png?style=flat
+   :target: https://pypi.python.org/pypi/statsd-tags/
    :alt: Latest release
 
-.. image:: https://pypip.in/py_versions/statsd/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/statsd/
+.. image:: https://pypip.in/py_versions/statsd-tags/badge.svg?style=flat
+   :target: https://pypi.python.org/pypi/statsd-tags/
    :alt: Supported Python versions
 
-.. image:: https://pypip.in/wheel/statsd/badge.svg?style=flat
-   :target: https://pypi.python.org/pypi/statsd/
+.. image:: https://pypip.in/wheel/statsd-tags/badge.svg?style=flat
+   :target: https://pypi.python.org/pypi/statsd-tags/
    :alt: Wheel Status
 
-.. image:: https://pypip.in/d/statsd/badge.png?style=flat
-   :target: https://pypi.python.org/pypi/statsd/
+.. image:: https://pypip.in/d/statsd-tags/badge.png?style=flat
+   :target: https://pypi.python.org/pypi/statsd-tags/
    :alt: Downloads
 
-:Code:          https://github.com/jsocol/pystatsd
+:Code:          https://github.com/toddjames/statsd-tags
 :License:       MIT; see LICENSE file
-:Issues:        https://github.com/jsocol/pystatsd/issues
-:Documentation: https://statsd.readthedocs.io/
+:Issues:        https://github.com/toddjames/statsd-tags/issues
+:Documentation: https://statsd-tags.readthedocs.io/
 
 Quickly, to use:
 
@@ -55,16 +53,16 @@ The easiest way to install statsd is with pip!
 
 You can install from PyPI::
 
-    $ pip install statsd
+    $ pip install statsd-tags
 
 Or GitHub::
 
-    $ pip install -e git+https://github.com/jsocol/pystatsd#egg=statsd
+    $ pip install -e git+https://github.com/toddjames/statsd-tags#egg=statsd
 
 Or from source::
 
-    $ git clone https://github.com/jsocol/pystatsd
-    $ cd statsd
+    $ git clone https://github.com/toddjames/statsd-tags
+    $ cd statsd-tags
     $ python setup.py install
 
 
@@ -76,4 +74,4 @@ There are lots of docs in the ``docs/`` directory and on ReadTheDocs_.
 
 .. _statsd: https://github.com/etsy/statsd
 .. _Graphite: https://graphite.readthedocs.io/
-.. _ReadTheDocs: https://statsd.readthedocs.io/en/latest/index.html
+.. _ReadTheDocs: https://statsd-tags.readthedocs.io/en/latest/index.html
