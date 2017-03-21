@@ -6,7 +6,6 @@ import socket
 import time
 import abc
 
-
 __all__ = ['StatsClient', 'TCPStatsClient']
 
 
@@ -24,6 +23,7 @@ class Timer(object):
 
     def __call__(self, f):
         """Thread-safe timing function decorator."""
+
         @wraps(f)
         def _wrapped(*args, **kwargs):
             start_time = time.time()
@@ -33,6 +33,7 @@ class Timer(object):
                 elapsed_time_ms = 1000.0 * (time.time() - start_time)
                 self.client.timing(self.stat, elapsed_time_ms, self.rate)
             return return_value
+
         return _wrapped
 
     def __enter__(self):
@@ -117,21 +118,20 @@ class StatsClientBase(object):
         if rate < 1:
             if random.random() > rate:
                 return
-            value = '%s|@%s' % (value, rate)
+            value = '{}|@{}'.format(value, rate)
 
         if self._prefix:
-            stat = '%s.%s' % (self._prefix, stat)
+            stat = '{}.{}'.format(self._prefix, stat)
 
         if tags:
             tag_string = ','.join(
                 self._build_tag(k, v) for k, v in tags.items())
-            return '%s:%s|#%s' % (stat, value, tag_string)
-
-        return '%s:%s' % (stat, value)
+            return '{},{}:{}'.format(stat, tag_string, value)
+        return '{}:{}'.format(stat, value)
 
     def _build_tag(self, tag, value):
         if value:
-            return '%s:%s' % (str(tag), str(value))
+            return '{}={}'.format(str(tag), str(value))
         else:
             return tag
 
@@ -210,7 +210,6 @@ class TCPStatsClient(StatsClientBase):
 
 
 class PipelineBase(StatsClientBase):
-
     __metaclass__ = abc.ABCMeta
 
     def __init__(self, client):
@@ -242,7 +241,6 @@ class PipelineBase(StatsClientBase):
 
 
 class Pipeline(PipelineBase):
-
     def __init__(self, client):
         super(Pipeline, self).__init__(client)
         self._maxudpsize = client._maxudpsize
@@ -261,7 +259,6 @@ class Pipeline(PipelineBase):
 
 
 class TCPPipeline(PipelineBase):
-
     def _send(self):
         self._client._after('\n'.join(self._stats))
         self._stats.clear()
