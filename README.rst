@@ -1,6 +1,6 @@
-=========================================================
-A Python statsd client with DogTag-compatible tag support
-=========================================================
+===========================================================
+A Python statsd client with Telegraf-compatible tag support
+===========================================================
 
 statsd_ is a friendly front-end to Graphite_. This is a Python client
 for the statsd daemon. More specifically, this is a fork of jsocol's
