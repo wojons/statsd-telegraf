@@ -31,13 +31,14 @@ You can also add a prefix to all your stats:
     >>> c = statsd.StatsClient('localhost', 8125, prefix='foo')
     >>> c.incr('bar')  # Will be 'foo.bar' in statsd/graphite.
 
-DogTag-compatible tags are supported, as well:
+Telegraf-compatible tags are supported, as well:
 
 .. code-block:: python
 
     >>> import statsd
     >>> c = statsd.StatsClient('localhost', 8125)
-    >>> c.gauge('baz', 42, tags=['production', 'fqdn': 'example.org'])
+    >>> c.incr('baz', tags={'type': 'response'}) 
+    >>> # baz,type=response:1|c
 
 
 Installing
