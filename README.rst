@@ -2,14 +2,16 @@
 A Python statsd client with Telegraf-compatible tag support
 ===========================================================
 
+_This is a fork of `statsd-tags` which is a fork of `pystatsd` package._
+
 statsd_ is a friendly front-end to Graphite_. This is a Python client
 for the statsd daemon. More specifically, this is a fork of jsocol's
 pystatsd client, with the addition of support for DogTag-compatible
 tags.
 
-:Code:          https://github.com/toddjames/statsd-tags
+:Code:          https://github.com/Granitosaurus/statsd-telegraf
 :License:       MIT; see LICENSE file
-:Issues:        https://github.com/toddjames/statsd-tags/issues
+:Issues:        https://github.com/Granitosaurus/statsd-telegraf/issues
 :Documentation: https://statsd-tags.readthedocs.io/
 
 Quickly, to use:
@@ -45,16 +47,16 @@ The easiest way to install statsd is with pip!
 
 You can install from PyPI::
 
-    $ pip install statsd-tags
+    $ pip install statsd-telegraf
 
 Or GitHub::
 
-    $ pip install -e git+https://github.com/toddjames/statsd-tags#egg=statsd
+    $ pip install -e git+https://github.com/Granitosaurus/statsd-telegraf#egg=statsd-telegraf
 
 Or from source::
 
-    $ git clone https://github.com/toddjames/statsd-tags
-    $ cd statsd-tags
+    $ git clone https://github.com/Granitosaurus/statsd-telegraf
+    $ cd statsd-telegraf
     $ python setup.py install
 
 
